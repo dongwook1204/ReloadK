@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReloadK - 수학 개념 퀴즈</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</head>
+<body>
+    <header>
+        <h1>ReloadK</h1>
+    </header>
+
+    <main>
+        <div id="quiz-generator" class="card">
+            <h2>퀴즈 생성</h2>
+            <form id="quiz-form">
+                <div class="form-group">
+                    <label for="topic">주제</label>
+                    <input type="text" id="topic" name="topic" placeholder="예: 피타고라스 정리" required>
+                </div>
+                <div class="form-group">
+                    <label for="text">관련된 내용</label>
+                    <textarea id="text" name="text" rows="8" placeholder="관련된 글을 입력하거나 붙여넣으세요" required></textarea>
+                </div>
+                <button type="submit" id="generate-btn">퀴즈 생성</button>
+            </form>
+        </div>
+
+        <div id="quiz-container" class="card hidden">
+            </div>
+
+        <div id="loading-spinner" class="spinner hidden"></div>
+        <div id="message-area" class="message-box hidden"></div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 PARA Reloadk</p>
+    </footer>
+</body>
+</html>
